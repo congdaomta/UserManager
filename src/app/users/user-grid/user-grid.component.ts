@@ -1,8 +1,7 @@
-import { SharedModule } from './../../shared/shared.module';
+import { UserService } from './../../shared/services/user-service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-user-grid',
@@ -20,5 +19,8 @@ export class UserGridComponent implements OnInit {
       this.apiUrl = bien;
       console.log(this.apiUrl);
     });
+  }
+  gotoCreate() {
+
   }
 }

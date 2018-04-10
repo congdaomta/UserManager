@@ -14,8 +14,10 @@ import { AuthModule } from './auth/auth.module';
 import { RolesModule } from './roles/roles.module';
 import { CoresModule } from './cores/cores.module';
 import { UsersModule } from './users/users.module';
+import { SharedModule } from './shared/shared.module';
 
-import { UserService } from './shared/services/user.service';
+import { UserService } from './shared/services/user-service/user.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,9 +30,12 @@ import { UserService } from './shared/services/user.service';
     RolesModule,
     AuthModule,
     LayoutsModule,
-    HttpModule
+    HttpModule,
+    SharedModule,
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+  ],
   bootstrap: [
     AppComponent
   ]

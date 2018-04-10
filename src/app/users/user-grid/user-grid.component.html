@@ -1,20 +1,26 @@
-<div id="user-list">
-  <table class="table">
+<div class="table100-head limiter container-table100 wrap-table100 table100 ver1 m-b-110">
+  <table class="table table-hover">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Create At</th>
+      <tr class="row100 head">
+        <th class="cell100 column1" scope="col">#</th>
+        <th class="cell100 column2" scope="col">Name</th>
+        <th class="cell100 column3" scope="col">Email</th>
+        <th class="cell100 column4" scope="col">Create At</th>
+        <th class="cell100 column5" scope="col">Modify</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of apiUrl">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.createdAt | date}}</td>
+      <tr class="row100 body" *ngFor="let item of apiUrl">
+        <td class="cell100 column1">{{item.id}}</td>
+        <td class="cell100 column2">{{item.name}}</td>
+        <td class="cell100 column3">{{item.email}}</td>
+        <td class="cell100 column4">{{item.createdAt | date}}</td>
+        <td class="cell100 column5">
+          <a routerLink="/user/create">Edit</a>&nbsp;&nbsp;&nbsp;
+          <a href="#">Delete</a>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+163.6875

@@ -9,13 +9,15 @@ import { UserFormComponent } from './user-form/user-form.component';
 
 import { LayoutsModule } from './../shared/layouts/layouts.module';
 import { ComponentsModule } from './../shared/components/components.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     UsersRoutingModule,
     ComponentsModule,
-    LayoutsModule
+    LayoutsModule,
+    SharedModule
   ],
   declarations: [
     UserComponent,
