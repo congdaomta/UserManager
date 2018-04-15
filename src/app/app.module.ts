@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { LayoutsModule } from './shared/layouts/layouts.module';
-import { ComponentsModule } from './shared/components/components.module';
 
 import { AuthModule } from './auth/auth.module';
 import { RolesModule } from './roles/roles.module';
@@ -29,9 +28,9 @@ import { UserService } from './shared/services/user-service/user.service';
     UsersModule,
     RolesModule,
     AuthModule,
-    LayoutsModule,
     HttpModule,
     SharedModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     UserService,

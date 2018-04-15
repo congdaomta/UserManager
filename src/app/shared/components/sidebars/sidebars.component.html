@@ -1,4 +1,4 @@
-<div id="app-sidebar">
+<!-- <div id="app-sidebar">
 <br/><br/>
   <ul class="list-group list-group-flush">
     <li class="list-group-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -15,4 +15,76 @@
     </li>
   </ul>
 
-</div>
+</div> -->
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../../assets/style-sidebar.css">
+  <link rel="stylesheet" href="../../../../assets/fonts/fontawesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+
+<body>
+
+
+
+  <div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" responsive>
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+        <strong>BS</strong>
+      </div>
+
+      <ul class="list-unstyled components">
+        <li class="active">
+          <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class="glyphicon glyphicon-user" style="font-size: 120%"></i>
+            User Management
+          </a>
+          <ul class="collapse list-unstyled" id="userSubmenu">
+            <li>
+              <a href="/user">List Users</a>
+            </li>
+            <li>
+              <a href="/user/create">Add User</a>
+            </li>
+          </ul>
+          <br/>
+
+          <a href="#roleSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class="fa fa-shield" style="font-size:150%"></i>
+            Role Management
+          </a>
+          <ul class="collapse list-unstyled" id="roleSubmenu">
+            <li>
+              <a href="#">Update User Role</a>
+            </li>
+            <li>
+              <a href="#">Role Setting</a>
+            </li>
+          </ul>
+
+          <br/>
+
+        </li>
+        <li>
+          <a href="/login">
+            <i class="glyphicon glyphicon-log-in" style="font-size: 150%"></i>
+            Login
+          </a>
+        </li>
+
+        <br/>
+
+        <li>
+          <a href="/register">
+            <i class="fa fa-user-plus" style="font-size: 150%"></i>
+            Register
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</body>

@@ -15,8 +15,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    ComponentsModule,
-    LayoutsModule,
     SharedModule
   ],
   declarations: [
