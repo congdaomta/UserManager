@@ -1,9 +1,13 @@
+import { FormsModule } from '@angular/forms';
 import { RoleComponent } from './roles/role/role.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +26,7 @@ import { UserService } from './shared/services/user-service/user.service';
     AppComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -30,7 +35,8 @@ import { UserService } from './shared/services/user-service/user.service';
     AuthModule,
     HttpModule,
     SharedModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [
     UserService,

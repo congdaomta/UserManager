@@ -7,31 +7,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss']
+  selector: 'app-user-create',
+  templateUrl: './user-create.component.html',
+  styleUrls: ['./user-create.component.scss']
 })
-export class UserFormComponent implements OnInit {
-  @Input() user: User;
+export class UserCreateComponent implements OnInit {
+
+  user: User;
+  users: User[];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private userService: UserService, private location: Location) { }
 
   ngOnInit() {
-    this.getUser();
+    this.getUsers();
   }
 
-
-  getUser(): void {
-    const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.userService.getUser(id).subscribe(user => this.user = user);
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => this.users = users);
   }
 
-  save(): void {
-    this.userService.updateUser(this.user).subscribe(() => this.goBack());
-  }
-
-  goBack(): void {
-    this.location.back();
+  add(): void {
+    this.userService.addUser(this.user).subscribe(user => { this.users.push(user); });
   }
 }

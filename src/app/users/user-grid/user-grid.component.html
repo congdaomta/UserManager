@@ -5,18 +5,18 @@
         <th class="cell100 column1" scope="col">#</th>
         <th class="cell100 column2" scope="col">Name</th>
         <th class="cell100 column3" scope="col">Email</th>
-        <th class="cell100 column4" scope="col">Create At</th>
+        <th class="cell100 column4" scope="col">Role</th>
         <th class="cell100 column5" scope="col">Modify</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="row100 body" *ngFor="let item of apiUrl">
+      <tr class="row100 body" *ngFor="let item of users">
         <td class="cell100 column1">{{item.id}}</td>
         <td class="cell100 column2">{{item.name}}</td>
         <td class="cell100 column3">{{item.email}}</td>
-        <td class="cell100 column4">{{item.createdAt | date}}</td>
+        <td class="cell100 column4">{{item.role}}</td>
         <td class="cell100 column5">
-          <a routerLink="/user/create">Edit</a>&nbsp;&nbsp;&nbsp;
+          <a routerLink="/user/{{item.id}}">Edit</a>&nbsp;&nbsp;&nbsp;
           <a href="#">Delete</a>
         </td>
       </tr>

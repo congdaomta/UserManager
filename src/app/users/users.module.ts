@@ -10,17 +10,21 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { LayoutsModule } from './../shared/layouts/layouts.module';
 import { ComponentsModule } from './../shared/components/components.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { UserCreateComponent } from './user-create/user-create.component';
 
 @NgModule({
   imports: [
     CommonModule,
     UsersRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   declarations: [
     UserComponent,
     UserGridComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserCreateComponent
   ]
 })
 export class UsersModule { }

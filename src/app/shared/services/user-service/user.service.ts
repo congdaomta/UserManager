@@ -1,20 +1,37 @@
+import { USERS } from './../../../mock-users';
+import { User } from './../../../user';
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { of } from 'rxjs/observable/of';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class UserService {
 
-  private apiUrl = 'http://5ac35614852b8c0014ab1519.mockapi.io/api/v1/user';
+  private usersUrl = 'api/users';
+  constructor(private _http: HttpClient) { }
 
-  constructor(private _http: Http) { }
-
-  getList(): Observable<any[]> {
-    return this._http.get(this.apiUrl).map((response: Response) => response.json());
+  getUsers(): Observable<User[]> {
+    return this._http.get<User[]>(this.usersUrl);
   }
 
-  getSingle(id: any): Observable<any> {
-    return this._http.get(`${this.apiUrl}/${id}`).map((response: Response) => response.json());
+  getUser(id: number): Observable<User> {
+    const url = `${this.usersUrl}/${id}`;
+    return this._http.get<User>(url);
+  }
+
+  updateUser(user: User): Observable<any> {
+    return this._http.put(this.usersUrl, user, httpOptions);
+  }
+
+  addUser(user: User): Observable<User> {
+    return this._http.post<User>(this.usersUrl, user, httpOptions);
   }
 }

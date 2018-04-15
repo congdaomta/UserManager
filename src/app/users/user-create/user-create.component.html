@@ -1,0 +1,42 @@
+<app-layout>
+    <app-page-content>
+
+      <section header>
+        <h2>Add User</h2>
+        <div *ngIf="user">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name1" placeholder="Enter name" (ngModel)="user.name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email" (ngModel)="user.email">
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <div>
+              <select name="role" id="role1" (ngModel)="user.role">
+                <option>Administrator</option>
+                <option>Editor</option>
+                <option>Author</option>
+                <option>Contributor</option>
+                <option>Subscriber</option>
+                <option>User basic</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <button (click)="add()">
+              Add
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section body>
+
+      </section>
+    </app-page-content>
+  </app-layout>

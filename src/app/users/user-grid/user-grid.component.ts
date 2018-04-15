@@ -1,3 +1,4 @@
+import { User } from './../../user';
 import { UserService } from './../../shared/services/user-service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,17 +11,16 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class UserGridComponent implements OnInit {
 
-  public apiUrl: any[];
+  users: User[];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) { }
+  constructor( private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getList().subscribe((bien: any) => {
-      this.apiUrl = bien;
-      console.log(this.apiUrl);
-    });
+    this.getUsers();
   }
-  gotoCreate() {
 
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => this.users = users);
   }
+
 }
